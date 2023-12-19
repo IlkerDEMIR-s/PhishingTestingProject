@@ -43,7 +43,7 @@ app.UseEndpoints(endpoints =>
         pattern: "Admin/{controller=Dashboard}/{action=Index}/{id?}"
     );
 
-    endpoints.MapControllerRoute("default", "{controller=Account}/{action=Login}/{id?}");
+    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
     endpoints.MapRazorPages();
 
