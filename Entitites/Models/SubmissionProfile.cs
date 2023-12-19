@@ -11,8 +11,11 @@ namespace Entitites.Models
     {
         [Key]
         public int SubmissionProfileId { get; set; }
+        [Required (ErrorMessage = "Submission Profile Name is required")]
         public string SubmissionProfileName { get; set; }
+        [Required (ErrorMessage = "Submission Profile Description is required")]
         public string FromMail { get; set; }
+        [Required (ErrorMessage = "Submission Profile Description is required")]
         public string ToMail { get; set; }
     }
 }
