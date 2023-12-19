@@ -1,0 +1,52 @@
+@model Campaign
+
+<div class="text-center">
+    <div class="display-6 my-3"><i class="fa-solid fa-square-pen text-warning"></i> Update</div>
+    <hr class="my-4" style="border: 2px solid yellow; border-radius: 5px;">
+</div>
+
+<form method="post" asp-action="Update" enctype="multipart/form-data">
+
+    <input type="hidden" asp-for="CampaignId" />
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <div class="row">
+        <div class="form-group my-3">
+            <label asp-for="CampaignName" class="control-label">CampaignName</label>
+            <input asp-for="CampaignName" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group my-3">
+        <label asp-for="EmailTemplateId">Email Template</label>
+        <select asp-for="EmailTemplateId" class="form-control"
+                asp-items="@((IEnumerable<SelectListItem>)ViewBag.EmailTemplates)">
+            <option value="">-- Select Template --</option>
+        </select>
+    </div>
+    <div class="form-group my-3">
+        <label asp-for="SubmissionProfileId">Submission Profile</label>
+        <select asp-for="SubmissionProfileId" class="form-control"
+                asp-items="@((IEnumerable<SelectListItem>)ViewBag.SubmissionProfiles)">
+            <option value="">-- Select Profile --</option>
+        </select>
+    </div>
+
+    @* Hidden fields to store the selected IDs *@
+    <input type="hidden" asp-for="EmailTemplateId" />
+    <input type="hidden" asp-for="SubmissionProfileId" />
+
+    <div class="form-group my-3">
+        <div class="btn-group">
+            <button class="btn btn-warning" type="submit">
+                <i class="fa-solid fa-square-pen"></i>
+                Update
+            </button>
+            <a asp-action="Index" class="btn btn-outline-warning">
+                <i class="fa fa-list"></i>
+                Campaigns
+            </a>
+        </div>
+    </div>
+</form>
+
+

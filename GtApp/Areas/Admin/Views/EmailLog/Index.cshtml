@@ -1,0 +1,44 @@
+@model List<ReportViewModel>
+
+<div class="text-center my-3 ">
+    <div class="display-6">Interactions</div>
+</div>
+<table class="table table-striped table-hover my-3 ">
+    <hr class="my-4" style="border: 2px solid red; border-radius: 5px;">
+    <div class="text-center">
+        <div class="d-flex justify-content-end my-3">
+            <div class="d-flex justify-content-end my-3">
+                <a class="btn btn-outline-danger" asp-controller="Report" asp-action="Index">
+                    <i class="fa fa-plus"></i>
+                    Back
+                </a>
+            </div>
+        </div>
+    </div>
+    <thead>
+        <tr>
+            <th class="font-weight-bold"><i class="fa-solid fa-hashtag"></i>Email Log No</th>
+            <th class="font-weight-bold">Unique Identifier</th>
+            <th class="font-weight-bold">Campaign Name</th>
+            <th class="font-weight-bold">Interaction Type</th>
+            <th class="font-weight-bold">Click Timestamp</th>
+            <th class="font-weight-bold">To Mail</th>
+            <th class="font-weight-bold">Email Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.EmailLog.EmailLogId</td>
+                <td>@report.EmailLog.UniqueIdentifier</td>
+                <td>@report.Campaign.CampaignName</td>
+                <td>@report.EmailLog.InteractionType</td>
+                <td>@report.EmailLog.ClickTimestamp</td>
+                <td>@report.SubmissionProfile.ToMail</td>
+                <td>@report.EmailTemplate.EmailContent</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

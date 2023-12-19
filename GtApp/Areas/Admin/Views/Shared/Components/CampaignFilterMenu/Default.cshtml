@@ -1,0 +1,29 @@
+<div class="my-3">
+    <h6 class="lead">
+        <i class="fa fa-filter text-secondary"></i>
+        Filters
+    </h6>
+</div>
+
+<div class="my-2">
+    <form method="get" asp-action="index">
+        <input type="hidden" name="emailTemplateId" value="@(Context.Request.Query["emailTemplateId"])" />
+        <input type="hidden" name="summissionProfileId" value="@(Context.Request.Query["summissionProfileId"])" />
+         <div class="form-group my-2">
+            <label for="campaignNameSearchTerm">Campaign Name</label>
+            <input class="form-control bg-warning-subtle text-dark" name="campaignNameSearchTerm" placeholder="Name" />
+        </div>
+ 
+        <div class="form-group my-2">
+            <button type="submit" class="btn btn-primary btn-sm">Filter</button>
+        </div>
+    </form>
+    <button class="btn btn-outline-primary btn-sm" onclick="clearFilters()">Clear Filters</button>
+</div>
+
+<script>
+    function clearFilters() {
+        // Redirect to the same page without query parameters
+        window.location.href = window.location.origin + window.location.pathname;
+    }
+</script>

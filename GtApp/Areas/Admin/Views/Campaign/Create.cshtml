@@ -1,0 +1,50 @@
+@model CampaignViewModel
+
+<div class="text-center">
+    <div class="display-6 my-3"><i class="fa-solid fa-envelope-open text-success"></i> Create Campaign</div>
+    <hr class="my-4" style="border: 2px solid green; border-radius: 5px;">
+</div>
+
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <div class="row">
+        <div class="form-group my-3">
+            <label asp-for="Campaign.CampaignName" class="control-label">CampaignName</label>
+            <input asp-for="Campaign.CampaignName" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group my-3">
+        <label asp-for="Campaign.EmailTemplateId">Email Template</label>
+        <select asp-for="Campaign.EmailTemplateId" class="form-control"
+                asp-items="@((IEnumerable<SelectListItem>)ViewBag.EmailTemplates)">
+            <option value="">-- Select Template --</option>
+        </select>
+    </div>
+    <div class="form-group my-3">
+        <label asp-for="Campaign.SubmissionProfileId">Submission Profile</label>
+        <select asp-for="Campaign.SubmissionProfileId" class="form-control"
+                asp-items="@((IEnumerable<SelectListItem>)ViewBag.SubmissionProfiles)">
+            <option value="">-- Select Profile --</option>
+        </select>
+    </div>
+
+    @* Hidden fields to store the selected IDs *@
+    <input type="hidden" asp-for="Campaign.EmailTemplateId" />
+    <input type="hidden" asp-for="Campaign.SubmissionProfileId" />
+
+    <div class="form-group my-3">
+        <div class="btn-group">
+            <button class="btn btn-success" type="submit">
+                <i class="fa fa-save"></i>
+                Save
+            </button>
+            <a asp-action="Index" class="btn btn-outline-success">
+                <i class="fa fa-list"></i>
+               Campaigns
+            </a>
+        </div>
+    </div>
+</form>
+
+

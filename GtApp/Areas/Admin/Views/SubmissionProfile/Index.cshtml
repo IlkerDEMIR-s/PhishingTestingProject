@@ -1,0 +1,67 @@
+@model List<SubmissionProfile>
+
+<div class="text-center">
+    <div class="display-6 my-3 font-weight-bold" style="font-family: 'Arial', sans-serif;">Submission Profiles</div>
+    <table class="table table-striped table-hover my-3">
+        <hr class="my-4" style="border: 2px solid black; border-radius: 5px;">
+        <div class="text-center">
+            <div class="d-flex justify-content-end my-3">
+                <a class="btn btn-outline-success" asp-action="Create">
+                    <i class="fa fa-plus"></i>
+                    Create
+                </a>
+            </div>
+        </div>
+        <thead>
+            <tr>
+                <th class="font-weight-bold"><i class="fa-solid fa-hashtag"></i>Submission Profile No</th>
+                <th class="font-weight-bold">Submission Profile Name</th>
+                <th class="font-weight-bold">From Mail</th>
+                <th class="font-weight-bold">To Mail</th>
+                <th class="font-weight-bold">Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var submissionProfile in Model)
+            {
+                <tr>
+                    <td>@submissionProfile.SubmissionProfileId</td>
+                    <td>@submissionProfile.SubmissionProfileName</td>
+                    <td>@submissionProfile.FromMail</td>
+                    <td>@submissionProfile.ToMail</td>
+                    <td>
+                        <div class="btn-group">
+                            <a
+                               data-toggle="tooltip"
+                               data-placement="top"
+                               title="Edit"
+                               class="btn btn-warning" asp-action="Update"
+                               asp-route-id="@submissionProfile.SubmissionProfileId">
+                                <i class="fa-solid fa-edit"></i> Edit
+                            </a>
+                            <a
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Delete"
+                                class="btn btn-danger" asp-action="Delete"
+                               asp-route-id="@submissionProfile.SubmissionProfileId">
+                                <i class="fa fa-trash"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+@section Scripts
+    {
+    <script type="text/javascript">
+        $(document).ready(() => {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
+}

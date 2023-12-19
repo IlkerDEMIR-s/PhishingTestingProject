@@ -1,0 +1,44 @@
+@model List<ReportViewModel>
+
+
+<div class="text-center my-3 ">
+    <div class="display-6">Submitted Logins</div>
+</div>
+
+<table class="table table-striped table-hover my-3 ">
+    <hr class="my-4" style="border: 2px solid red; border-radius: 5px;">
+    <div class="text-center">
+        <div class="d-flex justify-content-end my-3">
+            <div class="d-flex justify-content-end my-3">
+                <a class="btn btn-outline-danger" asp-controller="Report" asp-action="Index">
+                    <i class="fa fa-plus"></i>
+                    Back
+                </a>
+            </div>
+        </div>
+    </div>
+    <thead>
+        <tr>
+            <th class="font-weight-bold"><i class="fa-solid fa-hashtag"></i>Login No</th>
+            <th class="font-weight-bold">User Term</th>
+            <th class="font-weight-bold">Password</th>
+            <th class="font-weight-bold">LoginDate</th>
+            <th class="font-weight-bold">To Mail</th>
+            <th class="font-weight-bold">Email Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.SocialMediaLogin.LoginId</td>
+                <td>@report.SocialMediaLogin.UserTerm</td>
+                <td>@report.SocialMediaLogin.Password</td>
+                <td>@report.SocialMediaLogin.LoginDate</td>
+                  <td>@report.SubmissionProfile.ToMail</td>
+                <td>@report.EmailTemplate.EmailContent</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

