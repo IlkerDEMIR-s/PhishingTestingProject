@@ -142,7 +142,7 @@ namespace GtApp.Areas.Admin.Controllers
         {
             SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com", 587);
             smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new NetworkCredential("testuser.12378@outlook.com", "qwer1234asd");
+            smtpClient.Credentials = new NetworkCredential("testuser.12379@outlook.com", "qwer1234asd");
             smtpClient.EnableSsl = true;
 
             if (smtpClient != null)
