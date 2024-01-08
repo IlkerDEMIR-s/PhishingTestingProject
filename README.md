@@ -24,12 +24,12 @@
 ## Login Details
 
 #### Admin
-Username: admin
+Username: Admin
 
-Password: admin+123456
+Password: Admin+123456
 
 
-## Screenshots
+## Some Screenshots From The Platform
 
 #### Home Page
 
