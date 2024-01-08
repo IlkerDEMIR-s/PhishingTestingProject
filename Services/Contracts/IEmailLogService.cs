@@ -1,4 +1,5 @@
-﻿using Entitites.Models;
+﻿using Entities.RequestParameters;
+using Entitites.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

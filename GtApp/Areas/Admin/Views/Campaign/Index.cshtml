@@ -1,5 +1,9 @@
 @model List<CampaignViewModel>
 
+<head>
+    <link rel="stylesheet" href="~/css/campaign.css" />
+</head>
+
 <div class="row">
     <div class="col-md-3">
         @await Component.InvokeAsync("EmailTemplateMenu")
@@ -9,12 +13,12 @@
 
     <div class="col-md-9">
         <div class="text-center">
-            <div class="display-6 my-3 font-weight-bold" style="font-family: 'Arial', sans-serif;">Campaigns</div>
+            <div class="display-6 my-3 font-weight-bold" style="font-family: 'Arial', sans-serif;"><i class="fa-solid fa-code-merge"></i> Campaigns</div>
             <table class="table table-striped table-hover my-3">
                 <hr class="my-4" style="border: 2px solid black; border-radius: 5px;">
                 <div class="text-center">
                     <div class="d-flex justify-content-end my-3">
-                        <a class="btn btn-outline-success" asp-action="Create">
+                        <a class="btn btn-success btn-lg" asp-action="Create">
                             <i class="fa fa-plus"></i>
                             Create
                         </a>
@@ -22,18 +26,16 @@
                 </div>
                 <thead>
                     <tr>
-                        <th class="font-weight-bold"><i class="fa-solid fa-hashtag"></i>Campaign No</th>
                         <th class="font-weight-bold">Campaign Name</th>
                         <th class="font-weight-bold">Email Template Name</th>
                         <th class="font-weight-bold">Submission Profile Name</th>
-                        <th class="font-weight-bold">Operations</th>
+                        <th class="font-weight-bold"><i class="fa-solid fa-gears text-white"></i> Operations</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var campaign in Model)
                     {
                         <tr>
-                            <td>@campaign.Campaign.CampaignId</td>
                             <td>@campaign.Campaign.CampaignName</td>
                             <td>@campaign.EmailTemplate.EmailTemplateName</td>
                             <td>@campaign.SubmissionProfile.SubmissionProfileName</td>

@@ -1,5 +1,10 @@
 @model List<ReportViewModel>
 
+<head>
+    <link rel="stylesheet" href="~/css/report.css">
+</head>
+
+
 <div class="text-center my-3 ">
     <div class="display-6"><i class="fa-solid fa-arrows-turn-to-dots text-danger"></i> Interactions</div>
 </div>
@@ -8,21 +13,64 @@
     <div class="text-center">
         <div class="d-flex justify-content-end my-3">
             <div class="d-flex justify-content-end my-3">
-                <a class="btn btn-outline-danger" asp-controller="Report" asp-action="Index">
+                <a class="btn btn-outline-danger btn-lg" asp-controller="Report" asp-action="Index">
                     <i class="fa fa-plus"></i>
                     Back
                 </a>
             </div>
         </div>
     </div>
+
+    <div class="card text-center my-3">
+        <div class="card-header bg-dark text-white">
+            <i class="fa-solid fa-bell-concierge text-warning"></i> Most Clicked Mail
+            <i class="fa-solid fa-envelope-circle-check text-white"></i>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@await Component.InvokeAsync("MostClickedMailSummary")</h5>
+        </div>
+        <div class="card-footer text-body-secondary bg-dark">
+        </div>
+    </div>
+
+    <div class="card text-center my-3">
+        <div class="card-header bg-dark text-white">
+            <i class="fa-solid fa-paper-plane text-warning"></i> The email most users sign in to
+            <i class="fa-solid fa-right-to-bracket text-white"></i>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@await Component.InvokeAsync("MostUsersSignInSummary")</h5>
+        </div>
+        <div class="card-footer text-body-secondary bg-dark">
+        </div>
+    </div>
+
+<div class="card bg-dark text-white">
+    <div class="card-body">
+        <form asp-action="Index" method="get" class="form-inline">
+            <div class="form-group my-2">
+                <label for="searchString" class="font-weight-bold fs-5 my-1">Find By Recipient Email</label>
+                <input type="text" class="form-control" id="searchString" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-magnifying-glass text-white"></i> Search</button>
+                <a asp-action="Index" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-rectangle-list text-primary"></i>
+                     Back to Full List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
     <thead>
         <tr>
-            <th class="font-weight-bold"><i class="fa-solid fa-hashtag"></i>Email Log No</th>
             <th class="font-weight-bold">Unique Identifier</th>
             <th class="font-weight-bold">Campaign Name</th>
             <th class="font-weight-bold">Interaction Type</th>
             <th class="font-weight-bold">Click Timestamp</th>
-            <th class="font-weight-bold">To Mail</th>
+            <th class="font-weight-bold">Recipient Email</th>
             <th class="font-weight-bold">Email Content</th>
         </tr>
     </thead>
@@ -30,7 +78,6 @@
         @foreach (var report in Model)
         {
             <tr>
-                <td>@report.EmailLog.EmailLogId</td>
                 <td>@report.EmailLog.UniqueIdentifier</td>
                 <td>@report.Campaign.CampaignName</td>
                 <td>@report.EmailLog.InteractionType</td>
@@ -41,4 +88,5 @@
         }
     </tbody>
 </table>
+
 

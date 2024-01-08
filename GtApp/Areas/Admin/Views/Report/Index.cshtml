@@ -1,11 +1,21 @@
 @model List<ReportViewModel>
 
-<div class="text-center my-3 text-danger">
-    <div class="display-6 my-3 font-weight-bold"
-    style="font-family: 'Arial', sans-serif;"><i class="fa-solid fa-paste text-danger"></i> Reports</div>
-<hr class="my-4" style="border: 2px solid red; border-radius: 5px;">
-</div>
+<head>
+    <link rel="stylesheet" href="~/css/report.css">
+</head> 
 
-<div class="my-5">
-    <partial name="_Cards" />
-</div>
+    <div class="text-center my-3 text-danger">
+        <div class="display-6 my-3 font-weight-bold" style="font-family: 'Arial', sans-serif;">
+            <i class="fas fa-paste text-danger"></i> Reports
+        </div>
+        <hr class="my-4" style="border: 2px solid red; border-radius: 5px;">
+    </div>
+
+    <div class="my-5">
+        <!-- Assuming _Cards partial view will be rendered here -->
+        <partial name="_Cards" />
+    </div>  
+
+
+
+

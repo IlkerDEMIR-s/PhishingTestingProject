@@ -1,0 +1,17 @@
+body {
+    background: #47a2fc;
+    background: -webkit-linear-gradient(to right, #47a2fc, #2879bf);
+    background: linear-gradient(to right, #7ab0e6, #4c258f);
+    min-height: 100vh;
+}
+
+.table {
+    background-color: transparent !important;
+}
+
+    .table th,
+    .table td {
+        background-color: transparent !important;
+        border: none;
+        font-size: 18px; /* Adjust the font size as needed */
+    }

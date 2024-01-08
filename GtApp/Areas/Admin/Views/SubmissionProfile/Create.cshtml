@@ -1,5 +1,14 @@
 @model SubmissionProfile
 
+<style>
+    body {
+        background: #47a2fc;
+        background: -webkit-linear-gradient(to right, #47a2fc, #2879bf);
+        background: linear-gradient(to right, #7ab0e6, #4c258f);
+        min-height: 100vh;
+    }
+</style>
+
 <div class="text-center">
     <div class="display-6 my-3"><i class="fa-solid fa-square-up-right text-success"></i> Create Submission Profile</div>
     <hr class="my-4" style="border: 2px solid green; border-radius: 5px;">
@@ -11,19 +20,19 @@
     <div class="row">
             <div class="form-group my-3">
             <label asp-for="SubmissionProfileName" class="control-label">Profile Name</label>
-            <input asp-for="SubmissionProfileName" class="form-control" />
+            <input asp-for="SubmissionProfileName" class="form-control" placeholder="Enter your profile name" />
             </div>
     </div>
     <div class="row">
         <div class="form-group my-3">
             <label asp-for="FromMail" class="control-label">From Mail</label>
-            <input asp-for="FromMail" class="form-control" />
+            <input asp-for="FromMail" class="form-control" placeholder="Enter sender email" />
         </div>
     </div>
     <div class="row">
         <div class="form-group my-3">
             <label asp-for="ToMail" class="control-label">To Mail</label>
-            <input asp-for="ToMail" class="form-control" />
+            <input asp-for="ToMail" class="form-control" placeholder="Enter recipient mail" />
         </div>
     </div>
 

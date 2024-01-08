@@ -8,9 +8,11 @@ namespace Entitites.ViewModels
     {
         [Required(ErrorMessage = "Campaign name is required")]
         public Campaign? Campaign { get; set; }
+
         [Required(ErrorMessage = "Email template is required")]
         public EmailTemplate? EmailTemplate { get; set; }
-        [Required(ErrorMessage = "Submission profile is required")]
+
+         
         public SubmissionProfile? SubmissionProfile { get; set; }
     }
 }

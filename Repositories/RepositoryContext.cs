@@ -12,7 +12,7 @@ namespace Repositories;
       public DbSet<SubmissionProfile> SubmissionProfile { get; set; }
       public DbSet<EmailTemplate> EmailTemplate { get; set; }
       public DbSet<SocialMediaLogin> SocialMediaLogin { get; set; }
-      public DbSet<EmailLog> EmailClickLog { get; set; }
+      public DbSet<EmailLog> EmailLog { get; set; }
 
 
 
@@ -22,6 +22,10 @@ namespace Repositories;
       {
                   
       }
+
+    public RepositoryContext()
+    {
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

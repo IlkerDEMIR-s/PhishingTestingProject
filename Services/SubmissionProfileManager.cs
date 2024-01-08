@@ -58,6 +58,16 @@ namespace Services
               _manager.SubmissionProfile.DeleteOneSubmissionProfile(submissionProfile);       
               _manager.Save();
             }
-        }   
+        }
+
+        public SubmissionProfile? GetOneSubmissionProfileByToMail(string toMail, bool trackChanges)
+        {
+            var submissionProfile = _manager.SubmissionProfile.GetOneSubmissionProfileByToMail(toMail, trackChanges);
+            if (submissionProfile == null)
+            {
+                throw new Exception("SubmissionProfile not found");
+            }
+            return submissionProfile;
+        }
     }
 }

@@ -1,0 +1,21 @@
+body {
+    background: url('../images/mailbg.jpg') center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.table {
+    background-color: transparent !important;
+}
+
+    .table th,
+    .table td {
+        background-color: transparent !important;
+        border: none;
+        font-size: 18px; /* Adjust the font size as needed */
+        
+    }
+    .table td {
+        
+    }
+

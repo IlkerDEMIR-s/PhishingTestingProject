@@ -28,5 +28,10 @@ namespace Repositories
         public IQueryable<SubmissionProfile> GetAllSubmissionProfiles(bool trackChanges) => FindAll(trackChanges);
 
         public void UpdateOneSubmissionProfile(SubmissionProfile entity) => Update(entity);
+
+        public SubmissionProfile? GetOneSubmissionProfileByToMail(string toMail, bool trackChanges)
+        {
+            return FindByCondition(p => p.ToMail.Contains(toMail), trackChanges);
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace Repositories.Contracts
     {
         IQueryable<SubmissionProfile> GetAllSubmissionProfiles(bool trackChanges);
         SubmissionProfile? GetOneSubmissionProfile(int id, bool trackChanges);
+        SubmissionProfile? GetOneSubmissionProfileByToMail(string toMail, bool trackChanges);
         void CreateOneSubmissionProfile(SubmissionProfile submissionProfile);
         void UpdateOneSubmissionProfile(SubmissionProfile entity);
         void DeleteOneSubmissionProfile(SubmissionProfile submissionProfile);

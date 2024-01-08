@@ -15,5 +15,7 @@ namespace Entitites.ViewModels
         public EmailTemplate EmailTemplate { get; set; }
         public SubmissionProfile SubmissionProfile { get; set; }
         public SocialMediaLogin SocialMediaLogin { get; set; }
+
+        public List<EmailLog> EmailLogs { get; set; }
     }
 }

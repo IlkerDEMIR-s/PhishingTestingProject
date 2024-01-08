@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="~/css/report.css">
+</head>
+
 <div class="row">
 
     <div id="cardex" class="col-md-3 mx-4 d-flex flex-column">
@@ -20,6 +24,7 @@
                 <h3 class="text-center display-3">
                     @await Component.InvokeAsync("EmailClickedSummary")
                 </h3>
+                <h5>Total Clicked : @await Component.InvokeAsync("EmailTotalClickedSummary")</h5>
             </div>
         </div>
     </div>
@@ -45,7 +50,7 @@
     <div class="col-md-3 mx-4">
         <div class="card bg-danger text-white" style="width: 62rem;">
             <div class="card-body text-center">
-                <h6 class="card-subtitle mb-2">regarding emails</h6>
+                <h6 class="card-subtitle mb-2">Regarding emails</h6>
                 <h5 class="card-title">See Interactions</h5>
                 <a asp-controller="EmailLog" asp-action="Index" class="card-link text-white text-center"><i class="fa-regular fa-eye"></i>See</a>
             </div>

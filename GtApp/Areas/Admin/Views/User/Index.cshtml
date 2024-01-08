@@ -1,10 +1,14 @@
 @model IEnumerable<IdentityUser>
 
-<div class="text-center display-6 my-3 font-weight-bold" style="font-family: 'Arial', sans-serif;">Users</div>
+<head>
+    <link rel="stylesheet" href="~/css/user.css">
+</head>
+
+<div class="text-center display-6 my-3 font-weight-bold" style="font-family: 'Arial', sans-serif;"><i class="fa-solid fa-users"></i> Users</div>
 <hr class="my-4" style="border: 2px solid black; border-radius: 5px;">
 
 <div class="d-flex justify-content-end">
-    <a asp-action="Create" class="btn btn-outline-success">
+    <a asp-action="Create" class="btn btn-success btn-lg">
         <i class="fa fa-solid fa-plus"></i>
         Add User
     </a>

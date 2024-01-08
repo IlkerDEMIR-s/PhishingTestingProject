@@ -1,5 +1,15 @@
 @model EmailTemplate
 
+<style>
+    body {
+        background: #ff7e5f;
+        background: -webkit-linear-gradient(to right, #ff7e5f, #b55f4a);
+        background: linear-gradient(to right, #cf854c, #bd462a);
+        min-height: 100vh;
+    }
+</style>
+
+
 <div class="text-center">
     <div class="display-6 my-3"><i class="fa-regular fa-envelope text-success"></i> Create Email Template</div>
     <hr class="my-4" style="border: 2px solid green; border-radius: 5px;">
@@ -11,25 +21,25 @@
     <div class="row">
             <div class="form-group my-3">
             <label asp-for="EmailTemplateName" class="control-label">Template Name</label>
-            <input asp-for="EmailTemplateName" class="form-control" />
+            <input asp-for="EmailTemplateName" class="form-control" placeholder="Enter template name"/>
             </div>
     </div>
     <div class="row">
         <div class="form-group my-3">
             <label asp-for="EmailSubject" class="control-label">Subject</label>
-            <input asp-for="EmailSubject" class="form-control" />
+            <input asp-for="EmailSubject" class="form-control" placeholder="Enter email subject" />
         </div>
     </div>
     <div class="row">
         <div class="form-group my-3">
             <label asp-for="EmailContent" class="control-label">Content</label>
-            <textarea asp-for="EmailContent" class="form-control" rows="4"></textarea>
+            <textarea asp-for="EmailContent" class="form-control" rows="4" placeholder="Enter email content"></textarea>
         </div>
     </div>
     <div class="row">
         <div class="form-group my-3">
-            <label asp-for="LandingPageUrl" class="control-label">Landing Page Url</label>
-            <input asp-for="LandingPageUrl" class="form-control" />
+            <label asp-for="LandingPageUrl" class="control-label">Landing Page</label>
+            <input asp-for="LandingPageUrl" class="form-control" placeholder="Enter landing page URL" />
         </div>
     </div>
 

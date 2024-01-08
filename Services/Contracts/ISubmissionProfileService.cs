@@ -13,6 +13,8 @@ namespace Services.Contracts
 
         SubmissionProfile? GetOneSubmissionProfile(int id, bool trackChanges);
 
+        SubmissionProfile? GetOneSubmissionProfileByToMail(string toMail, bool trackChanges);
+
         void CreateSubmissionProfile(SubmissionProfile submissionProfile);
 
         void UpdateOneSubmissionProfile(SubmissionProfile submissionProfile);

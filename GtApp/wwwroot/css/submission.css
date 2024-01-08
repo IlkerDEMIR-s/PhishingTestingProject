@@ -1,0 +1,17 @@
+body {
+    background: url('../images/submissionbg.png') center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.table {
+    background-color: transparent !important;
+}
+
+    .table th,
+    .table td {
+        background-color: transparent !important;
+        border: none;
+        font-size: 20px; /* Adjust the font size as needed */
+    }
+

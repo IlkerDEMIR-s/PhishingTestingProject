@@ -1,10 +1,13 @@
-﻿using Entitites.Models;
+﻿using Entities.RequestParameters;
+using Entitites.Models;
 using Repositories.Contracts;
+using Repositories.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Repositories
 {
@@ -28,5 +31,7 @@ namespace Repositories
         public IQueryable<EmailLog> GetAllEmailLogs(bool trackChanges) => FindAll(trackChanges);
 
         public void UpdateOneEmailLog(EmailLog entity) => Update(entity);
+
+
     }
 }

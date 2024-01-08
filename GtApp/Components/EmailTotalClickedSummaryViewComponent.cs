@@ -3,11 +3,11 @@ using Services.Contracts;
 
 namespace GtApp.Components
 {
-    public class EmailClickedSummaryViewComponent : ViewComponent
+    public class EmailTotalClickedSummaryViewComponent : ViewComponent
     {
         private readonly IServiceManager _manager;
-        
-        public EmailClickedSummaryViewComponent(IServiceManager manager)
+
+        public EmailTotalClickedSummaryViewComponent(IServiceManager manager)
         {
             _manager = manager;
         }
@@ -18,8 +18,6 @@ namespace GtApp.Components
                         .EmailLogService
                         .GetAllEmailLogs(false)
                         .Where(c => c.InteractionType == "clicked")
-                        .Select(c => c.UniqueIdentifier) 
-                        .Distinct() 
                         .Count()
                         .ToString();
         }

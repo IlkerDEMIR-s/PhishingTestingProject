@@ -1,0 +1,28 @@
+body {
+    background: url('../images/reportbg.png') center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* x-offset, y-offset, blur-radius, color */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+    .card:hover {
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+    }
+
+
+.table {
+    background-color: transparent !important;
+}
+
+    .table th,
+    .table td {
+        background-color: transparent !important;
+        border: none;
+        font-size: 18px; /* Adjust the font size as needed */
+    }
+
