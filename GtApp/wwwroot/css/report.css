@@ -26,3 +26,7 @@ body {
         font-size: 18px; /* Adjust the font size as needed */
     }
 
+a.text-dark {
+    color: black !important;  
+    text-decoration: none !important;  
+}

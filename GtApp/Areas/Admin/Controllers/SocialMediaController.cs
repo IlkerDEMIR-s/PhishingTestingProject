@@ -17,12 +17,17 @@ namespace GtApp.Areas.Admin.Controllers
                 _manager = manager;
         }
 
-        public IActionResult Index(string searchString)
+        public IActionResult Index(string searchString, string sortOrder)
         {
             ViewData["Title"] = "Datas";
             ViewData["CurrentFilter"] = searchString;
 
+            // Get the socialMediaLogins without filtering
             var socialMediaLogins = _manager.SocialMediaLoginService.GetAllSocialMediaLogins(false).ToList();
+
+            // Apply sorting
+            socialMediaLogins = SortSocialMediaLogins(socialMediaLogins, sortOrder);
+
             var reportViewModels = new List<ReportViewModel>();
 
             if (!String.IsNullOrEmpty(searchString))
@@ -62,7 +67,6 @@ namespace GtApp.Areas.Admin.Controllers
             }
             else
             {
-
                 foreach (var socialMediaLogin in socialMediaLogins)
                 {
                     var campaign = _manager.CampaignService.GetOneCampaign((int)socialMediaLogin.CampaignId, false);
@@ -79,11 +83,33 @@ namespace GtApp.Areas.Admin.Controllers
 
                     reportViewModels.Add(viewModel);
                 }
-
             }
 
+            // Set sorting links for Login Date
+            ViewData["LoginDateSortParm"] = String.IsNullOrEmpty(sortOrder) ? "LoginDateDesc" : "";
+            ViewData["LoginDateSortParm"] = sortOrder == "LoginDateAsc" ? "LoginDateDesc" : "LoginDateAsc";
 
             return View(reportViewModels);
         }
+
+        private List<SocialMediaLogin> SortSocialMediaLogins(List<SocialMediaLogin> socialMediaLogins, string sortOrder)
+        {
+            switch (sortOrder)
+            {
+                case "LoginDateAsc":
+                    socialMediaLogins = socialMediaLogins.OrderBy(s => s.LoginDate).ToList();
+                    break;
+                case "LoginDateDesc":
+                    socialMediaLogins = socialMediaLogins.OrderByDescending(s => s.LoginDate).ToList();
+                    break;
+                default:
+                    // Default sorting, you can choose whichever you prefer
+                    socialMediaLogins = socialMediaLogins.OrderByDescending(s => s.LoginDate).ToList();
+                    break;
+            }
+
+            return socialMediaLogins;
+        }
+
     }
 }

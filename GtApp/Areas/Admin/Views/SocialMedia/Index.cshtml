@@ -57,11 +57,32 @@
 
     <thead>
         <tr>
-            <th class="font-weight-bold">User Term</th>
-            <th class="font-weight-bold">Password</th>
-            <th class="font-weight-bold">LoginDate</th>
-            <th class="font-weight-bold">Recipient Email</th>
-            <th class="font-weight-bold">Email Content</th>
+            <th class="font-weight-bold"><i class="fa-solid fa-user-check"></i><br>
+                User Term</th>
+            <th class="font-weight-bold"><i class="fa-solid fa-key"></i> Password</th>
+            <th class="font-weight-bold">
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["LoginDateSortParm"]" class="text-dark">
+                    <div class="d-flex align-items-center"> 
+                        @if (ViewData["LoginDateSortParm"] == "LoginDateAsc")
+                        {
+                            <i class="fa-solid fa-arrow-down-wide-short"></i>
+                        }
+                        else if (ViewData["LoginDateSortParm"] == "LoginDateDesc")
+                        {
+                            <i class="fa-solid fa-arrow-up-short-wide"></i>
+                        }
+                        else
+                        {
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        }                         
+                            Login Date
+                        
+                    </div>
+                </a>
+            </th>
+
+            <th class="font-weight-bold"><i class="fa-solid fa-at"></i><br>Recipient Email</th>
+            <th class="font-weight-bold"><i class="fa-solid fa-envelope-open-text"></i><br>Email Content</th>
         </tr>
     </thead>
     <tbody>
